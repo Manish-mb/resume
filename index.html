@@ -476,7 +476,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -493,14 +493,14 @@
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+               <div id="success-alert" class="alert alert-success" style="display: none;">
+                  Your message has been sent.<strong> Thank you!</strong>
+                </div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" value="submit" onclick="sendmail()" >Send Message</button></div>
             </form>
           </div>
 
@@ -538,6 +538,44 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+  <script>
+    function sendmail(){
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let subject = document.getElementById("subject").value;
+      let message = document.getElementById("message").value;
+
+      // Check if any required fields are empty
+  if (!name || !email || !subject || !message) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+  
+      var body='Name: '+name+' <br> Email: '+email+' <br> Subject: '+subject+' <br> Message: '+message;
+    //  console.log(body);
+      
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "manishbisenmanish27@gmail.com",
+        Password: "BDFBDFD3E8FD78EB28A2057E22A55B718B93",
+        To: 'manishmb2797@gmail.com',
+        From: "manishbisenmanish27@gmail.com",
+        Subject: "For Contact",
+        Body: body
+      }).then(
+        message => alert(message)
+      );
+
+      // If all checks pass, display the success message
+      document.getElementById('success-alert').style.display = 'block';
+      
+    }
+    
+  </script>
 
 </body>
 
