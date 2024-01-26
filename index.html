@@ -541,22 +541,24 @@
   
   <script src="https://smtpjs.com/v3/smtp.js">
   </script>
+  
   <script>
-    function sendmail(){
+
+     function sendmail(){
 
       let name = document.getElementById("name").value;
       let email = document.getElementById("email").value;
       let subject = document.getElementById("subject").value;
       let message = document.getElementById("message").value;
 
-      // Check if any required fields are empty
+     
   if (!name || !email || !subject || !message) {
     alert('Please fill in all required fields.');
     return;
   }
   
       var body='Name: '+name+' <br> Email: '+email+' <br> Subject: '+subject+' <br> Message: '+message;
-    //  console.log(body);
+   
       
       Email.send({
         Host: "smtp.elasticemail.com",
@@ -569,10 +571,9 @@
       }).then(
         message => alert(message)
       );
-
-      // If all checks pass, display the success message
+       
       document.getElementById('success-alert').style.display = 'block';
-      
+
     }
     
   </script>
