@@ -543,23 +543,14 @@
   </script>
   
   <script>
-
      function sendmail(){
-
       let name = document.getElementById("name").value;
       let email = document.getElementById("email").value;
       let subject = document.getElementById("subject").value;
       let message = document.getElementById("message").value;
 
-     
-  // if (!name || !email || !subject || !message) {
-  //   alert('Please fill in all required fields.');
-  //   return;
-  // }
-  
       var body='Name: '+name+' <br> Email: '+email+' <br> Subject: '+subject+' <br> Message: '+message;
    
-      
       Email.send({
         Host: "smtp.elasticemail.com",
         Username: "manishbisenmanish27@gmail.com",
@@ -568,16 +559,15 @@
         From: "manishbisenmanish27@gmail.com",
         Subject: "For Contact",
         Body: body
-      }).then(
-        message => alert(message)
-      );
-       
-    //  document.getElementById('success-alert').style.display = 'block';
-
-    }
+      }).then(function (message) {
     
+    alert("Email sent successfully!");
+        
+      window.location.href = 'https://manish-mb.github.io/resume/';
+   });
+
+    } 
   </script>
 
 </body>
-
 </html>
