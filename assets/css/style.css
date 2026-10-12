@@ -1099,3 +1099,31 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+/*----
+Read More button css
+----*/
+.read-more-content {
+  max-height: 75px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.read-more-content.expanded {
+  max-height: 500px;
+}
+
+.read-more-btn {
+  background: transparent;
+  border: none;
+  /* color: #0563bb; */
+  color: #149ddd;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.read-more-btn:hover {
+  text-decoration: none
+}
+
