@@ -1121,9 +1121,22 @@ Read More button css
   font-weight: 600;
   cursor: pointer;
   padding: 5px 0;
+  
 }
 
 .read-more-btn:hover {
   text-decoration: none
 }
 
+.exp-btn{
+  background: #149ddd;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.exp-btn button[type=submit]:hover {
+  background: #37b3ed;
+}
