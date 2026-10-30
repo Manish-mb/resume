@@ -1104,13 +1104,13 @@ section {
 Read More button css
 ----*/
 .read-more-content {
-  max-height: 75px;
+  max-height: 205px;
   overflow: hidden;
   transition: max-height 0.4s ease;
 }
 
 .read-more-content.expanded {
-  max-height: 500px;
+  max-height: 1000px;
 }
 
 .read-more-btn {
@@ -1118,7 +1118,7 @@ Read More button css
   border: none;
   /* color: #0563bb; */
   color: #149ddd;
-  font-weight: 600;
+  /* font-weight: 600; */
   cursor: pointer;
   padding: 5px 0;
   
